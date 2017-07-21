@@ -6,7 +6,7 @@ import { geoKey } from './api-keys';
 export class LocationService {
   constructor(private http: Http) { }
 
-  getLocation(lat: string, lng: string) {
+  getPhysicalAddress(lat: string, lng: string) {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +lat+ "," +lng+ "&key="+ geoKey);
   }
 

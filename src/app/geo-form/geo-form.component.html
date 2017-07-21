@@ -1,15 +1,28 @@
 <h1>Search by Entering Coordinates or by Entering a Physical address.</h1>
 
-  <div id="physicalAddress" class="form-group">
+  <div id="getPhysicalAddress" class="form-group">
     <label for="lat">Latitude:</label>
     <input #lat>
     <label for="lng">Longitude:</label>
     <input #lng>
     <button (click)="getPhysicalAddress(lat.value, lng.value)">Get Physical Address</button>
   </div>
-
+  <hr>
   <div id="getCoordinates">
     <label for="address">Physical Address:</label><br>
     <input #address>
-    <button (click)="getLatLng(address.value)">Enter</button>
+    <button (click)="getCoordinates(address.value)">Enter</button>
+  </div>
+  <br>
+
+  <div class="results"><!--Display Results -->
+
+    <div *ngIf="location">
+      <p>{{ location.results[0].formatted_address }}</p>
+    </div>
+
+    <div *ngIf="latLng"><!--If latitude && longitude are true, show results -->
+      <h3>Physicial Address: {{ latLng.results[0].formatted_address }}</h3>
+      <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3><!--Display coordinates-->
+    </div>
   </div>
