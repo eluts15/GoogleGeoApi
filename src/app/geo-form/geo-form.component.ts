@@ -10,14 +10,23 @@ import { LocationService } from '../location.service';
 })
 
 export class GeoFormComponent {
+  //Observables
   location: any[]=null;
+  latLng: any[]=null;
+
   constructor(private locationService: LocationService) { }
 
   getLocationInfo(lat: string, lng: string) {
-    this.locationService.getByLatLng(lat, lng).subscribe(response => {
+    this.locationService.getLocation(lat, lng).subscribe(response => {
       this.location = response.json();
       console.log(this.location);
     });
   }
+
+  getLatLng(address: string) {
+
+  }
+
+
 
 }

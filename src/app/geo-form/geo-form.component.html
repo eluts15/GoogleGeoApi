@@ -6,6 +6,12 @@
     <input #lat>
     <label for="lng">Longitude:</label>
     <input #lng>
+    <label for="address">Physical Address:</label>
+    <input #address>
   </div>
-  <button (click)="getLocationInfo(lat.value, lng.value)">Get Geo Information</button>
+  <button (click)="getLocationInfo(lat.value, lng.value)">Enter</button>
 </form>
+
+<div id="results">
+  <p>{{location.results[0].formatted_address}}</p
+</div>
