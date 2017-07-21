@@ -16,17 +16,17 @@ export class GeoFormComponent {
 
   constructor(private locationService: LocationService) { }
 
-  getLocationInfo(lat: string, lng: string) {
+  getPhysicalAddress(lat: string, lng: string) {
     this.locationService.getLocation(lat, lng).subscribe(response => {
       this.location = response.json();
       console.log(this.location);
     });
   }
 
-  getLatLng(address: string) {
-
-  }
-
-
-
+  // getLatLng(address: string) {
+  //   this.locationService.getCoordinates(address).subscribe(response => {
+  //     this.address = response.json();
+  //     console.log(this.address);
+  //   })
+  // }
 }

@@ -1,17 +1,15 @@
-<h1>Search by Geo location</h1>
+<h1>Search by Entering Coordinates or by Entering a Physical address.</h1>
 
-<form>
-  <div class="form-group">
+  <div id="physicalAddress" class="form-group">
     <label for="lat">Latitude:</label>
     <input #lat>
     <label for="lng">Longitude:</label>
     <input #lng>
-    <label for="address">Physical Address:</label>
-    <input #address>
+    <button (click)="getPhysicalAddress(lat.value, lng.value)">Get Physical Address</button>
   </div>
-  <button (click)="getLocationInfo(lat.value, lng.value)">Enter</button>
-</form>
 
-<div id="results">
-  <p>{{location.results[0].formatted_address}}</p
-</div>
+  <div id="getCoordinates">
+    <label for="address">Physical Address:</label><br>
+    <input #address>
+    <button (click)="getLatLng(address.value)">Enter</button>
+  </div>
