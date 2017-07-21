@@ -1,0 +1,11 @@
+<h1>Search by Geo location</h1>
+
+<form>
+  <div class="form-group">
+    <label for="lat">Latitude:</label>
+    <input #lat>
+    <label for="lng">Longitude:</label>
+    <input #lng>
+  </div>
+  <button (click)="getLocationInfo(lat.value, lng.value)">Get Geo Information</button>
+</form>
