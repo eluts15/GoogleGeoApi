@@ -16,7 +16,7 @@ export class GeoFormComponent {
   getLocationInfo(lat: string, lng: string) {
     this.locationService.getByLatLng(lat, lng).subscribe(response => {
       this.location = response.json();
-      console.log(location)
+      console.log(this.location);
     });
   }
 
