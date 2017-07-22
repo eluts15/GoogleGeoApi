@@ -8,22 +8,16 @@
     <button (click)="getPhysicalAddress(lat.value, lng.value)">Get Physical Address</button>
   </div>
   <hr>
-  <div id="getCoordinates">
+  <div id="getCoordinates" class="form-group">
     <label for="address">Physical Address:</label><br>
     <input #address>
     <button (click)="getCoordinates(address.value)">Enter</button>
   </div>
   <br>
 
-  <div class="results"><!--Display Results -->
-
-    <div *ngIf="location">
+  <div *ngIf="location">
       <p>{{ location.results[0].formatted_address }}</p>
-    </div>
-
-    <!-- <div *ngIf="location">
-      <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3>
-    </div> -->
-
-
+  </div>
+  <div *ngIf="latLng">
+    <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3>
   </div>

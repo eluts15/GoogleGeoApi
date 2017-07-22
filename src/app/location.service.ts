@@ -11,6 +11,6 @@ export class LocationService {
   }
 
   getCoordinates(address: string) {
-    return this.http.get("https://maps.googleapis.com/map/api/geocode/json?address=" +address+ "&key="+ geoKey);
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&key="+ geoKey);
   }
 }
