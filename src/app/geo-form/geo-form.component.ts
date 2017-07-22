@@ -16,10 +16,9 @@ export class GeoFormComponent {
 
   constructor(private locationService: LocationService) { }
 
-  getPhysicalAddress(lat: string, lng: string) {
+  getPhysicalAddress(lat: string, lng: string) { //Return a physical address.
     this.locationService.getPhysicalAddress(lat, lng).subscribe(response => {
       this.location = response.json();
-      console.log(this.location);
     });
   }
 
@@ -27,6 +26,6 @@ export class GeoFormComponent {
     let jsonObj = address.split(' ').join('+');
     this.locationService.getCoordinates(jsonObj).subscribe(response => {
       this.latLng = response.json();
-    })
+    });
   }
 }
