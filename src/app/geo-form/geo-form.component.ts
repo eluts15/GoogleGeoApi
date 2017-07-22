@@ -26,7 +26,6 @@ export class GeoFormComponent {
     let jsonObj = address.split(' ').join('+');
     this.locationService.getCoordinates(jsonObj).subscribe(response => {
       this.latLng = response.json();
-      console.log(this.latLng);
     });
   }
 }

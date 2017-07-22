@@ -1,5 +1,5 @@
 <h1>Search by Entering Coordinates or by Entering a Physical address.</h1>
-
+<div class="container">
   <div id="getPhysicalAddress" class="form-group">
     <label for="lat">Latitude:</label>
     <input #lat>
@@ -21,3 +21,4 @@
   <div *ngIf="latLng">
     <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3>
   </div>
+</div>
