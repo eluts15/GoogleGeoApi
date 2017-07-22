@@ -21,8 +21,9 @@
       <p>{{ location.results[0].formatted_address }}</p>
     </div>
 
-    <div *ngIf="latLng"><!--If latitude && longitude are true, show results -->
-      <h3>Physicial Address: {{ latLng.results[0].formatted_address }}</h3>
-      <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3><!--Display coordinates-->
+    <div *ngIf="latLng">
+      <h3>Coordinates(Latitude, Longitude): {{ latLng.results[0].geometry.location.lat }}, {{ latLng.results[0].geometry.location.lng }}</h3>
     </div>
+
+
   </div>

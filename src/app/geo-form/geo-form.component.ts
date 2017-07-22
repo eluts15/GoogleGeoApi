@@ -23,7 +23,7 @@ export class GeoFormComponent {
     });
   }
 
-  getCoordinates(address: string) {
+  getCoordinates(address: string) { // Return lat and long coordinates.
     let jsonObj = address.split(' ').join('+');
     this.locationService.getCoordinates(jsonObj).subscribe(response => {
       this.latLng = response.json();
