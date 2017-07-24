@@ -13,6 +13,7 @@ export class GeoFormComponent {
   //Observables
   location: any[]=null;
   latLng: any[]=null;
+  //notfound: boolean=false;
 
   constructor(private locationService: LocationService) { }
 
@@ -21,6 +22,14 @@ export class GeoFormComponent {
       this.location = response.json();
     });
   }
+
+  // if(response.json().photos.length > 0)
+  //     {
+  //       this.photos = response.json();
+  //     }
+  //     else {
+  //       this.noPhotos = true;
+  //     }
 
   getCoordinates(address: string) { // Return lat and long coordinates.
     let jsonObj = address.split(' ').join('+');
